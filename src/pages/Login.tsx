@@ -5,7 +5,7 @@ const Login: FC<any> = (): ReactElement => {
     return (
         <Box sx={{
             flexGrow: 1,
-            backgroundColor: "primary.light",
+            backgroundColor: "primary.main",
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center'
@@ -16,7 +16,6 @@ const Login: FC<any> = (): ReactElement => {
                 bgcolor: 'text.primary',
                 boxShadow: 2
             }}>
-
             </Box>
         </Box>
     );
