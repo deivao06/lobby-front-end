@@ -4,7 +4,10 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Link } from "react-router-dom";
 
-const Login: FC<any> = (): ReactElement => {
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ReplyIcon from '@mui/icons-material/Reply';
+
+const Register: FC<any> = (): ReactElement => {
     const theme = useTheme();
     const matchesMd = useMediaQuery(theme.breakpoints.up('md'));
     const matchesLg = useMediaQuery(theme.breakpoints.up('lg'));
@@ -12,9 +15,8 @@ const Login: FC<any> = (): ReactElement => {
     let image = <Grid item xs={!matchesLg ? 6 : 8} className="form-container-image" sx={{
         height: '100%',
         borderRadius: "0px 0px 0px 300px",
-        backgroundImage: "url(/images/background.jpg)",
+        backgroundImage: "url(/images/register-background.jpg)",
         backgroundSize: "cover",
-        backgroundPositionX: -200,
         boxShadow: 3
     }}>
     </Grid>;
@@ -22,8 +24,8 @@ const Login: FC<any> = (): ReactElement => {
     return (
         <Box className="background" sx={{
             flexGrow: 1,
-            backgroundColor: "primary.dark",
-            backgroundImage: !matchesMd ? "url(/images/background.jpg)" : "",
+            backgroundColor: "secondary.main",
+            backgroundImage: !matchesMd ? "url(/images/register-background.jpg)" : "",
             backgroundSize: "cover",
             display: 'flex',
             justifyContent: 'center',
@@ -57,14 +59,16 @@ const Login: FC<any> = (): ReactElement => {
                         p={5}
                         height={'100%'}
                     >
-                        <Typography variant="h3" color={'text.secondary'} padding={3} fontWeight={"bold"} alignSelf={"left"} noWrap>NOME/LOGO</Typography>
+                        <Typography variant="h3" color={'text.secondary'} padding={3} fontWeight={"bold"} alignSelf={"left"} noWrap>REGISTER</Typography>
+                        <TextField sx={{ input: { color: '#000' }, boxShadow: 1 }} fullWidth type={'text'} variant="outlined" placeholder="Username"></TextField>
                         <TextField sx={{ input: { color: '#000' }, boxShadow: 1 }} fullWidth type={'text'} variant="outlined" placeholder="E-mail"></TextField>
                         <TextField sx={{ input: { color: '#000' }, boxShadow: 1 }} fullWidth type={'password'} variant="outlined" placeholder="Password"></TextField>
+                        <TextField sx={{ input: { color: '#000' }, boxShadow: 1 }} fullWidth type={'password'} variant="outlined" placeholder="Confirm Password"></TextField>
                         <Box
                             display={'flex'}
                             flexDirection={'row'}
                             width={'100%'}
-                            justifyContent={'space-between'}
+                            justifyContent={'left'}
                             alignItems={'center'}
                         >
                             <Button sx={{ 
@@ -73,23 +77,12 @@ const Login: FC<any> = (): ReactElement => {
                                     borderRadius: 3,
                                     fontWeight: 'bold'
                                 }}
-                                variant="contained"
-                                color="primary"
-                            > 
-                                Login
-                            </Button>
-                            <Button sx={{ 
-                                    marginTop: 3, 
-                                    padding: 3, 
-                                    borderRadius: 3,
-                                    fontWeight: 'bold'
-                                }}
                                 component={ Link }
-                                to={'/register'}
-                                variant="contained" 
+                                to={'/login'}
+                                variant="contained"
                                 color="secondary"
                             > 
-                                Register
+                                <ReplyIcon />
                             </Button>
                         </Box>
                     </Box>
@@ -100,4 +93,4 @@ const Login: FC<any> = (): ReactElement => {
     );
 };
 
-export default Login;
+export default Register;

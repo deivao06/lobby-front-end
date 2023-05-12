@@ -4,14 +4,21 @@ export const theme = createTheme({
     palette: {
       primary: {
         main: "#7CA982",
-        contrastText: "#000",
+        contrastText: "#fff",
       },
       secondary: {
         main: "#8D5B4C",
-        contrastText: "#000",
+        contrastText: "#fff",
       },
       text: {
-        primary: "#F1F7ED"
+        primary: "#F1F7ED",
+        secondary: "#000000",
       }
     },
+    typography: {
+      fontFamily: [
+        'Concert One',
+        'cursive',
+      ].join(','),
+    }
 });
