@@ -4,7 +4,6 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Link } from "react-router-dom";
 
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ReplyIcon from '@mui/icons-material/Reply';
 
 const Register: FC<any> = (): ReactElement => {
