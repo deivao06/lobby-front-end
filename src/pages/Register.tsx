@@ -5,6 +5,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { Link } from "react-router-dom";
 
 import ReplyIcon from '@mui/icons-material/Reply';
+import SoloFilledTextField from "../components/SoloFilledTextField";
 
 const Register: FC<any> = (): ReactElement => {
     const theme = useTheme();
@@ -16,6 +17,7 @@ const Register: FC<any> = (): ReactElement => {
         borderRadius: "0px 0px 0px 300px",
         backgroundImage: "url(/images/register-background.jpg)",
         backgroundSize: "cover",
+        backgroundPositionX: !matchesLg ? -300 : -200,
         boxShadow: 3
     }}>
     </Grid>;
@@ -59,10 +61,10 @@ const Register: FC<any> = (): ReactElement => {
                         height={'100%'}
                     >
                         <Typography variant="h3" color={'text.secondary'} padding={3} fontWeight={"bold"} alignSelf={"left"} noWrap>REGISTER</Typography>
-                        <TextField sx={{ input: { color: '#000' }, boxShadow: 1 }} fullWidth type={'text'} variant="outlined" placeholder="Username"></TextField>
-                        <TextField sx={{ input: { color: '#000' }, boxShadow: 1 }} fullWidth type={'text'} variant="outlined" placeholder="E-mail"></TextField>
-                        <TextField sx={{ input: { color: '#000' }, boxShadow: 1 }} fullWidth type={'password'} variant="outlined" placeholder="Password"></TextField>
-                        <TextField sx={{ input: { color: '#000' }, boxShadow: 1 }} fullWidth type={'password'} variant="outlined" placeholder="Confirm Password"></TextField>
+                        <SoloFilledTextField type="text" placeholder="Username" />
+                        <SoloFilledTextField type="text" placeholder="E-mail" />
+                        <SoloFilledTextField type="password" placeholder="Password" />
+                        <SoloFilledTextField type="password" placeholder="Confirm Password" />
                         <Box
                             display={'flex'}
                             flexDirection={'row'}

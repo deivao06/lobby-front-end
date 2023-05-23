@@ -3,6 +3,7 @@ import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Link } from "react-router-dom";
+import SoloFilledTextField from "../components/SoloFilledTextField";
 
 const Login: FC<any> = (): ReactElement => {
     const theme = useTheme();
@@ -14,7 +15,7 @@ const Login: FC<any> = (): ReactElement => {
         borderRadius: "0px 0px 0px 300px",
         backgroundImage: "url(/images/background.jpg)",
         backgroundSize: "cover",
-        backgroundPositionX: -200,
+        backgroundPositionX: !matchesLg ? -500 : -200,
         boxShadow: 3
     }}>
     </Grid>;
@@ -24,6 +25,7 @@ const Login: FC<any> = (): ReactElement => {
             flexGrow: 1,
             backgroundColor: "primary.dark",
             backgroundImage: !matchesMd ? "url(/images/background.jpg)" : "",
+            backgroundPositionX: !matchesMd ? -100 : "",
             backgroundSize: "cover",
             display: 'flex',
             justifyContent: 'center',
@@ -58,8 +60,8 @@ const Login: FC<any> = (): ReactElement => {
                         height={'100%'}
                     >
                         <Typography variant="h3" color={'text.secondary'} padding={3} fontWeight={"bold"} alignSelf={"left"} noWrap>NOME/LOGO</Typography>
-                        <TextField sx={{ input: { color: '#000' }, boxShadow: 1 }} fullWidth type={'text'} variant="outlined" placeholder="E-mail"></TextField>
-                        <TextField sx={{ input: { color: '#000' }, boxShadow: 1 }} fullWidth type={'password'} variant="outlined" placeholder="Password"></TextField>
+                        <SoloFilledTextField type="text" placeholder="E-mail" />
+                        <SoloFilledTextField type="password" placeholder="Password" />
                         <Box
                             display={'flex'}
                             flexDirection={'row'}
